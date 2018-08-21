@@ -9,3 +9,28 @@
     font-family: Papyrus, Impact;
 }
 
+#last_round {
+    font-size: 30px;
+}
+
+#game_title {
+    font-size: 48px;
+    color: purple;
+    font-family: papyrus, Times, serif;
+}
+
+#other_version, #other_version a {
+    font-size: 20px;
+    color: crimson;
+}
+
+#other_version {
+    position: fixed;
+    top: 0;
+    right: 10px;
+    color: blue;
+}
+
+#instructions {
+    height: 45px;
+}
