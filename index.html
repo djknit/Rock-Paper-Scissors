@@ -3,105 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>Rock Paper Scissors</title>
 </head>
 
 <body>
 
-    <style>
-        * {
-            font-size: 39px;
-            text-align: center;
-        }
-        
-        #game_over {
-            color: crimson;
-            font-size: 48px;
-            font-family: Papyrus, Impact;
-        }
-    </style>
-
-    <script>
-        
-        //Declaring variables
-        var choices = ["r","p","s"];
-        var userChoice;
-        var compChoice;
-        var userChoiceName;
-        var compChoiceName;
-        var wins = 0;
-        var losses = 0;
-        var ties = 0;
-
-        //Function for relating letters (r,p,s) to game choices
-        function choiceToName(x) {
-            if (x === "r") {
-                return("Rock");
-            }
-            if (x === "p") {
-                return("Paper");
-            }
-            if (x === "s") {
-                return("Scissors");
-            }
-        }
-
-        //Gameplay
-        alert("\nWelcome to Rock Paper Scissors. Press ok to begin.\n");
-        var keepPlaying = "y";
-        while (keepPlaying === "y") {
-            
-            //Get user choice
-            userChoice = prompt("\nEnter your choice of 'R', 'P' or 'S'.\n");
-            userChoice = userChoice.toLowerCase();
-            while ((userChoice !== "r") && (userChoice !== "p") && (userChoice !== "s")) {
-                userChoice = prompt("\nInvalid response. Please enter 'R', 'P', or 'S'.\n");
-            }
-            userChoiceName = choiceToName(userChoice);
-            
-            //Randomly select computer choice
-            compChoice = choices[Math.floor(Math.random()*choices.length)];
-            compChoiceName = choiceToName(compChoice);
-            console.log("user " + userChoice);
-            console.log("comp " + compChoice);
-            
-            //Alert choices
-            alert("\nYou played " + userChoiceName + ".\n\nComputer plays " + compChoiceName + ".\n");
-            
-            //Decide round winner, alert result and add score
-            if ((userChoice === "r" && compChoice === "s") || (userChoice === "p" && compChoice === "r") || (userChoice === "s" && compChoice === "p")) {
-                alert("\nYou win this round.\n");
-                wins++;
-            }
-            else if ((userChoice === "s" && compChoice === "r") || (userChoice === "r" && compChoice === "p") || (userChoice === "p" && compChoice === "s")) {
-                alert("\nYou lose this round.\n");
-                losses++;
-            }
-            else {
-                alert("\nIt's a tie.\n");
-                ties++;
-            }
-
-            console.log("wins: "+wins);
-            console.log("losses: "+losses);
-            console.log("ties "+ties);
-            
-            alert("\nWins " + wins + "\nLosses: "+ losses + "\nTies: " + ties + "\n");
-            
-            keepPlaying = "x";
-            while (keepPlaying !== "y" && keepPlaying !== "n") {
-                keepPlaying = prompt("\nKeep playing? Enter 'Y' for yes or 'N' for no.\n");
-                keepPlaying = keepPlaying.toLowerCase();
-            }
-        
-        }
-        
-        document.write('<h1 id="game_over"><br>Game Over<h1>');
-        document.write("<br>Wins: " + wins);
-        document.write("<br><br>Losses: " + losses);
-        document.write("<br><br>Ties: " + ties);
-
-    </script>
+<script src="script.js"/>
 
 </body>
 </html>

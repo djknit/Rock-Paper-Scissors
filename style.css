@@ -1,0 +1,11 @@
+* {
+    font-size: 39px;
+    text-align: center;
+}
+
+#game_over {
+    color: crimson;
+    font-size: 48px;
+    font-family: Papyrus, Impact;
+}
+
